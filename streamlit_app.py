@@ -1,5 +1,6 @@
 import streamlit as st
 from datetime import time, datetime
+import pandas as pd
 
 st.header('Hello world!')
 
@@ -46,3 +47,13 @@ start_time = st.slider(
      value=datetime(2020, 1, 1, 9, 30),
      format="MM/DD/YY - hh:mm")
 st.write("Start time:", start_time)
+
+# example 6
+
+st.header('Line chart')
+
+chart_data = pd.DataFrame(
+     np.random.randn(20, 3),
+     columns=['a', 'b', 'c'])
+
+st.line_chart(chart_data)
